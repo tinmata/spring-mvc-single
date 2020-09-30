@@ -18,11 +18,6 @@
     </param-value>
   </context-param>
 
-  <!-- セッションイベントのリスナーを登録します。 -->
-  <listener>
-    <listener-class>javax.servlet.http.HttpSessionListener</listener-class>
-  </listener>
-
   <!-- 文字のエンコーディングのフィルターを設定し、URLに適用します。 -->
   <filter>
     <filter-name>CharacterEncodingFilter</filter-name>
@@ -33,7 +28,7 @@
     </init-param>
     <init-param>
       <param-name>forceEncoding</param-name>
-      <param-value>UTF-8</param-value>
+      <param-value>true</param-value>
     </init-param>
   </filter>
   <filter-mapping>
