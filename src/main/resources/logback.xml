@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration>
+
+  <!-- コンソール出力設定 -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>
+        <![CDATA[%d{yyyy-MM-dd HH:mm:ss} [%thread] [%X-Track] [%-5level] [%-48logger{48}] :: %msg%n]]>
+      </pattern>
+    </encoder>
+  </appender>
+  
+  <!-- ファイル出力設定（ローテーション設定） -->
+  <appender name="APPLICATION_LOG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${catalina.base}/logs/spring-mvc-single-application.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <fileNamePattern>${catalina.base}/logs/spring-mvc-single-application-%d{yyyy-MM-dd}.log</fileNamePattern>
+      <maxHistory>7</maxHistory>
+    </rollingPolicy>
+    <encoder>
+      <charset>UTF-8</charset>
+      <pattern>
+        <![CDATA[%d{yyyy-MM-dd HH:mm:ss} [%thread] [%X-Track] [%-5level] [%-48logger{48}] :: %msg%n]]>
+      </pattern>
+    </encoder>
+  </appender>
+
+  <!-- 個別ログ出力レベル設定 -->
+  <!-- アプリケーションログ出力レベル -->
+  <logger name="com.teamzc">
+    <level value="DEBUG" />
+  </logger>
+
+  <!-- リポジトリログ出力レベル -->
+  <logger name="com.teamzc.domain.repository">
+    <level value="TRACE" />
+  </logger>
+
+  <!-- 共通ログ出力レベル -->
+
+  <!-- ルートログ出力 -->
+  <root level="INFO">
+    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="APPLICATION_LOG_FILE" />
+  </root>
+</configuration>

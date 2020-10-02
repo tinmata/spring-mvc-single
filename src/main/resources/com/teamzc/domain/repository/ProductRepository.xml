@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teamzc.domain.repository.ProductRepository">
+
+  <select id="findAll" resultType="List">
+    <![CDATA[
+      SELECT * FROM trn_a_product
+    ]]>
+  </select>
+  
+  <select id="findById" parameterType="String" resultType="Product">
+    <![CDATA[
+      SELECT * FROM trn_a_product
+      WHERE PRODUCT_ID = #{productId}
+    ]]>
+  </select>
+</mapper>

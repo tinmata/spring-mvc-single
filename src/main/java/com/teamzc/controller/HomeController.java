@@ -15,9 +15,11 @@ public class HomeController {
 
   private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-  @RequestMapping(value = "/home", method = {RequestMethod.GET, RequestMethod.POST})
+  @RequestMapping(
+      value = "/home",
+      method = {RequestMethod.GET, RequestMethod.POST})
   public String home(Locale locale, Model model) {
-    logger.info("Welcome home! The client locale is {}.", locale);
+    logger.debug("Welcome home! The client locale is {}.", locale);
 
     Date date = new Date();
     DateFormat dateFormat =

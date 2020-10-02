@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Echo Application</title>
+</head>
+<body>
+  <form th:object="${echoForm}" th:action="@{/echo/hello}" method="post">
+    <label for="name">Input Your Name:</label>
+    <input th:field="*{name}">
+    <input type="submit">
+  </form>
+</body>
+</html>

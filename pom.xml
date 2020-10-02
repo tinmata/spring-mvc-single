@@ -14,6 +14,15 @@
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin.version}</version>
+          <configuration>
+            <source>${java-version}</source>
+            <target>${java-version}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
           <version>${maven-war-plugin.version}</version>
           <configuration>
@@ -31,10 +40,16 @@
   </build>
 
   <dependencies>
+    <!-- Spring MVC Start -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>${spring-webmvc.version}</version>
+      <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
+      <version>${spring.version}</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -43,6 +58,7 @@
       <scope>provided</scope>
       <version>${javax.servlet-api.version}</version>
     </dependency>
+    <!-- Spring MVC End -->
     <!-- Thymeleaf Start -->
     <dependency>
       <groupId>org.thymeleaf</groupId>
@@ -65,19 +81,55 @@
       <version>${thymeleaf.extras.version}</version>
     </dependency>
     <!-- Thymeleaf End -->
+    <!-- Logback Start -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>${logback.version}</version>
+    </dependency>
+    <!-- Logback End -->
+    <!-- Database Start -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>${mysql.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+      <version>${mybatis.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis-spring</artifactId>
+      <version>${mybatis-spring.version}</version>
+    </dependency>
+    <!-- Database End -->
+    <!-- Utils Start -->
+    <!-- Utils End -->
   </dependencies>
 
   <properties>
     <!-- Project Properties -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <encoding>UTF-8</encoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <java-version>1.8</java-version>
     <!-- Maven Versions -->
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-war-plugin.version>3.3.1</maven-war-plugin.version>
     <!-- Dependency Versions -->
-    <spring-webmvc.version>5.2.9.RELEASE</spring-webmvc.version>
+    <spring.version>5.2.9.RELEASE</spring.version>
     <javax.servlet-api.version>4.0.1</javax.servlet-api.version>
     <thymeleaf.version>3.0.11.RELEASE</thymeleaf.version>
     <thymeleaf.extras.version>3.0.4.RELEASE</thymeleaf.extras.version>
+    <logback.version>1.2.3</logback.version>
+    <mysql.version>8.0.18</mysql.version>
+    <mybatis.version>3.5.5</mybatis.version>
+    <mybatis-spring.version>2.0.5</mybatis-spring.version>
   </properties>
 </project>
