@@ -5,8 +5,16 @@
 </head>
 <body>
   <form th:object="${echoForm}" th:action="@{/echo/hello}" method="post">
-    <label for="name">Input Your Name:</label>
-    <input th:field="*{name}">
+    <div>
+      <label for="url">Input URL:</label>
+      <input th:field="*{url}">
+      <span th:errors="*{url}" style="color: red;"></span>
+    </div>
+    <div>
+      <label for="code">Input CODE:</label>
+      <input th:field="*{code}">
+      <span th:errors="*{code}" style="color: red;"></span>
+    </div>
     <input type="submit">
   </form>
 </body>

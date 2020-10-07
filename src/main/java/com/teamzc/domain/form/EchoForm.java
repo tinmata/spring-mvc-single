@@ -1,18 +1,34 @@
 package com.teamzc.domain.form;
 
 import java.io.Serializable;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 public class EchoForm implements Serializable {
 
   private static final long serialVersionUID = -4247403134023646189L;
 
-  private String name;
+  @NotNull // (1)
+  @Size(min = 1) // (2)
+  private String url;
 
-  public String getName() {
-    return name;
+  @NotNull
+  @Size(min = 1)
+  private String code;
+
+  public String getUrl() {
+    return url;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setUrl(String url) {
+    this.url = url;
+  }
+
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
   }
 }

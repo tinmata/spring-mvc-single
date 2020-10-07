@@ -4,6 +4,12 @@
 <title>Echo Application</title>
 </head>
 <body>
-  <p th:text="|Hello ${name}|"></p>
+  <p th:text="|Target Url: ${url}|"></p>
+  <P>
+    <img th:src="|data:image/png;base64, ${qrCode}|">
+  </P>
+  <p>
+    <img th:src="|data:image/png;base64, ${barcode}|">
+  </p>
 </body>
 </html>
