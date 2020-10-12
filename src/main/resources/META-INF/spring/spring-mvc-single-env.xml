@@ -8,10 +8,10 @@
   <import resource="classpath*:/META-INF/spring/spring-mvc-single-infra.properties"/>
 
   <!-- MyBatis接続情報設定 -->
-  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-    <property name="driverClassName" value="" />
-    <property name="url" value="" />
-    <property name="username" value="" />
-    <property name="password" value="" />
+  <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" destroy-method="close">
+    <property name="driverClassName" value="${mysql.driverClassName}" />
+    <property name="url" value="${mysql.url}" />
+    <property name="username" value="${mysql.username}" />
+    <property name="password" value="${mysql.password}" />
   </bean>
 </beans>

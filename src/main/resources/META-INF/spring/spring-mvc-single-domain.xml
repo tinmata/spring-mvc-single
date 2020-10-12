@@ -10,5 +10,9 @@
   ">
   <!-- domainのBean定義ファイル -->
   
+  <!-- infrastructure層に関するBean定義をimportする。 -->
+  <import resource="classpath:/META-INF/spring/spring-mvc-single-infra.xml"/>
+  
+  <!-- domain層クラスの格納ディレクトリを宣言。 -->
   <context:component-scan base-package="com.teamzc.domain"/>
 </beans>

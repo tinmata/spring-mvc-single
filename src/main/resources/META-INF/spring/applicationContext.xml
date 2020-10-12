@@ -10,4 +10,7 @@
 
   <!-- domainのBean定義ファイルをインポートします。 -->
   <import resource="classpath:/META-INF/spring/spring-mvc-single-domain.xml"/>
+  
+  <!-- プロパティファイル格納ディレクトリを宣言。 -->
+  <context:property-placeholder location="classpath*:/META-INF/spring/*.properties"/>
 </beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+  xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd
+  ">
+
+  <!-- 環境依存するコンポーネントを定義するBean定義ファイルをimportする。 -->
+  <import resource="classpath:/META-INF/spring/spring-mvc-single-env.xml" />
+
+  <!-- Mapper インタフェースが格納されている基底パッケージを指定する。 -->
+  <mybatis:scan base-package="com.teamzc.domain.repository" />
+
+</beans>
